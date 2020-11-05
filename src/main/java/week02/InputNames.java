@@ -3,7 +3,9 @@ package week02;
 import java.util.Scanner;
 
 public class InputNames {
+
     public static void main(String[] args) {
+
         System.out.println("Enter five names");
         Scanner scanner = new Scanner(System.in);
         String name = "";
