@@ -24,8 +24,8 @@ public class StringTypeMain {
 
         String e = "Abcde";
         System.out.println(e.length());
-        System.out.println(e.indexOf(1));  // ? ezt nem találtam a tananyagban
-        System.out.println(e.substring(1,4));
+        System.out.println(e.substring(0,2));
+        System.out.println(e.substring(0,3));
 
 
 
