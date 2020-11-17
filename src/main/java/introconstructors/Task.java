@@ -7,9 +7,6 @@ public class Task {
     private String title;
     private String description;
     private LocalDateTime startDateTime;
-
-
-
     private int duration;
 
 
