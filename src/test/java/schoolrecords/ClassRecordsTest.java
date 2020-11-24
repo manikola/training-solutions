@@ -150,3 +150,4 @@ public class ClassRecordsTest {
         assertEquals("Kovács Rita, Nagy Béla, Varga Márton", classRecords.listStudentNames());
     }
 }
+

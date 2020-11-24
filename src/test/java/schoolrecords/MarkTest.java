@@ -29,3 +29,4 @@ public class MarkTest {
         assertEquals("excellent(5)", mark.toString());
     }
 }
+

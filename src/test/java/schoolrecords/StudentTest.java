@@ -90,3 +90,4 @@ public class StudentTest {
         assertEquals(0.0, student.calculateSubjectAverage(new Subject("földrajz")));
     }
 }
+

@@ -17,8 +17,8 @@ public class Tutor {
     }
     public boolean tutorTeachingSubject(Subject subject) {
         boolean teaching = false;
-        for (Subject sub : taughtSubjects) {
-            if (sub.getSubjectName().equals(subject.getSubjectName())) {
+        for (Subject item : taughtSubjects) {
+            if (item.getSubjectName().equals(subject.getSubjectName())) {
                 teaching = true;
                 break;
             }

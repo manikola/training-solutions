@@ -29,7 +29,7 @@ public class Mark {
 
     @Override
     public String toString() {
-        return  "marks: " + subject + ": " + markType.getDescrpition() + " ( " + markType.getValue() + ")";
+        return  markType.getDescrpition() + "(" + markType.getValue() + ")";
 
     }
 }
