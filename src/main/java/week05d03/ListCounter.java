@@ -1,24 +1,23 @@
-package week05.d03;
+package week05d03;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Scanner;
 
 public class ListCounter {
 
 
-        public int countAletters(List<String> words) {
+    public int countAletters(List<String> words) {
         int count = 0;
-        for (String item: words) {
+        for (String item : words) {
             String s = item.substring(0, 1).toLowerCase();
             if (s.equals("a")) {
                 count++;
             }
         }
 
-            return count;
-        }
+        return count;
+    }
+
     public static void main(String[] args) {
         ListCounter listCounter = new ListCounter();
         List<String> myList = new ArrayList<>();
@@ -26,11 +25,12 @@ public class ListCounter {
         myList.add("banán");
         myList.add("Aniko");
         myList.add("körte");
-        System.out.println(""+listCounter.countAletters(myList));
+
+        System.out.println("" + listCounter.countAletters(myList));
 
     }
+}
 
 
-    }
 
 
