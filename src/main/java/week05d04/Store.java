@@ -20,7 +20,6 @@ public class Store {
         for (Product item : inventory) {
             if (item.getDateOfExpire().isBefore(LocalDate.now())) {
                 count++;
-                System.out.println(count);
             }
         }
         return count;
