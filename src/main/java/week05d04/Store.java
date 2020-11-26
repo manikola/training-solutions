@@ -12,9 +12,7 @@ public class Store {
         inventory.add(product);
 
     }
-    public List<Product> getProductList() {
-        return getProductList();
-    }
+
     public int getNumberOfExpired(List<Product> inventory) {
         int count = 0;
         for (Product item : inventory) {
@@ -28,7 +26,11 @@ public class Store {
 
     public static void main(String[] args) {
         Store store = new Store();
-        List<Product> productList = new ArrayList<>();
-        productList.add(new Product("kenyér", 2020, 11, 22));
-        productList.add(new Product("alma", 2020, 11, 27));
-        productList.add(new Product("banán", 2020,11,22));
+        List<Product> inventory = new ArrayList<>();
+        store.addProduct(new Product("kenyér", 2020, 11, 22));
+        store.addProduct(new Product("alma", 2020, 11, 30));
+        store.addProduct(new Product("banán", 2020, 11, 22));
+
+        System.out.println(store.getNumberOfExpired(inventory));
+    }
+}
