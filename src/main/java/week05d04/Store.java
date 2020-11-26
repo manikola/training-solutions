@@ -13,7 +13,7 @@ public class Store {
 
     }
 
-    public int getNumberOfExpired(List<Product> inventory) {
+    public int getNumberOfExpired() {
         int count = 0;
         for (Product item : inventory) {
             if (item.getDateOfExpire().isBefore(LocalDate.now())) {
@@ -26,11 +26,11 @@ public class Store {
 
     public static void main(String[] args) {
         Store store = new Store();
-        List<Product> inventory = new ArrayList<>();
+        List<Product> productList = new ArrayList<>();
         store.addProduct(new Product("kenyér", 2020, 11, 22));
         store.addProduct(new Product("alma", 2020, 11, 30));
         store.addProduct(new Product("banán", 2020, 11, 22));
 
-        System.out.println(store.getNumberOfExpired(inventory));
+        System.out.println("" + store.getNumberOfExpired());
     }
 }
