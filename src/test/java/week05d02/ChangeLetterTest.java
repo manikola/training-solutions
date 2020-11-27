@@ -7,8 +7,9 @@ public class ChangeLetterTest {
 
     @Test
     public void testchangeVowels() {
+        ChangeLetter changeLetter = new ChangeLetter();
 
-        assertEquals("S*p*rc*l*fr*g*l*st*c*xp**l*d*c***s", "S*p*rc*l*fr*g*l*st*c*xp**l*d*c***s");
+        assertEquals("s*p*rc*l*fr*g*l*st*c*xp**l*d*c***s", changeLetter.changeVowels("Supercalifragilisticexpialidocious"));
 
     }
 }

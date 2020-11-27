@@ -6,15 +6,18 @@ public class ChangeLetter {
     public static final String STAR = "*";
 
     public String changeVowels(String text) {
-        StringBuilder builder = new StringBuilder();
-        for (int i = 0; i < text.length(); i++) {
-            String c = text.substring(i, i + 1);
-            if (VOWELS.contains(c)) {
-                builder.append(STAR);
-            }
+        text = text.toLowerCase();
+        char[] eng = {'a', 'e', 'i', 'o', 'u'};
+        for (char c : eng) {
+            text = text.replace(c, '*');
         }
-                return builder.toString();
-            }
+        return text;
+    }
+
+    public static void main(String[] args) {
+        ChangeLetter changeLetter = new ChangeLetter();
+        System.out.println(changeLetter.changeVowels("Supercalifragilisticexpialidocious"));
+    }
 
 
         }
