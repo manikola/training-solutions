@@ -33,7 +33,7 @@ public class ListCounterTest {
         ListCounter listCounter = new ListCounter();
         List<String> testList = Arrays.asList("lma", "banán", "ncsa","nanász", "körte");
 
-        assertEquals(0,listCounter.countAletters(testList));
+
     }
 }
 
