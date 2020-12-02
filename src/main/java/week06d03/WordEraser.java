@@ -8,8 +8,6 @@ public class WordEraser {
         for (int i =0; i < arrWords.length; i++) {
             if (!arrWords[i].equals(word)) {
                 builder.append(arrWords[i] + " ");
-            }else {
-                continue;
             }
 
             } return builder.toString().trim();
