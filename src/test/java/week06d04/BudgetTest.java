@@ -19,7 +19,7 @@ public class BudgetTest {
 
         ));
 
-            assertEquals(2,budget.getItemsByMonth(11));
+            assertEquals("[50, 50]" ,budget.getItemsByMonth(11));
 
 
     }
