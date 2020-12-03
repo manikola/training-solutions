@@ -6,6 +6,10 @@ public class Budget {
 
     private List<Item> items;
 
+    public Budget(List<Item> items) {
+        this.items = items;
+    }
+
     public int getItemsByMonth(int month) {
         int count = 0;
         for ( Item product : items ) {
