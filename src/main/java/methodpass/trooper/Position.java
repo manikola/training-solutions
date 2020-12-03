@@ -1,0 +1,28 @@
+package methodpass.trooper;
+
+public class Position {
+
+    private final double posX;
+    private final double posY;
+
+    public Position(double posX, double posY) {
+        this.posX = posX;
+        this.posY = posY;
+    }
+
+    public double getPosX() {
+        return posX;
+    }
+
+    public double getPosY() {
+        return posY;
+    }
+
+    public double distanceFrom(Position position) {
+        if (position == null) {
+            throw new IllegalArgumentException("Position can't be empty");
+        }
+        return Math.sqrt(Math.pow(this.posX - position.posX, 2) + Math.pow(this.posY - position.posY, 2));
+
+    }
+}
