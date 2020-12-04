@@ -10,13 +10,13 @@ public class Biscuit {
         this.gramAmount = gramAmount;
     }
 
-    public BiscuitType type() {
-        return type;
-    }
+        public BiscuitType getType() {
+            return type;
+        }
 
-    public int getGramAmount() {
-        return gramAmount;
-    }
+        public int getGramAmount() {
+            return gramAmount;
+        }
 
     public static Biscuit of(BiscuitType type, int gramAmount) {
         Biscuit favorite = new Biscuit(type, gramAmount);
@@ -30,6 +30,8 @@ public class Biscuit {
         return "type: " + type + " + gramAmount:" + gramAmount;
     }
 }
+
+
 
 
 

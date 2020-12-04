@@ -13,7 +13,7 @@ public class BiscuitTest {
         Biscuit keksz = new Biscuit(BiscuitType.PILOTA, 100);
 
         assertEquals( 100,keksz.getGramAmount());
-        assertEquals( BiscuitType.PILOTA,keksz.getBiscuitType());
+        assertEquals( BiscuitType.PILOTA,keksz.getType());
     }
 
 
