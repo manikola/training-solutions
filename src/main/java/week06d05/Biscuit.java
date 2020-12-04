@@ -10,7 +10,7 @@ public class Biscuit {
         this.gramAmount = gramAmount;
     }
 
-    public BiscuitType getBiscuitType() {
+    public BiscuitType type() {
         return type;
     }
 
@@ -18,8 +18,8 @@ public class Biscuit {
         return gramAmount;
     }
 
-    public static Biscuit of(BiscuitType biscuitType, int gramAmount) {
-        Biscuit favorite = new Biscuit(biscuitType, gramAmount);
+    public static Biscuit of(BiscuitType type, int gramAmount) {
+        Biscuit favorite = new Biscuit(type, gramAmount);
         return favorite;
 
 
