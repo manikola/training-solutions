@@ -1,4 +1,4 @@
-package week05d05;
+package week06d05;
 
 import org.junit.jupiter.api.Test;
 import week06d05.Biscuit;
