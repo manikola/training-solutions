@@ -18,10 +18,10 @@ public class MathAlgorithmsTest {
 
     public void testIsPrimePrime() {
 
-        assertEquals( true, new MathAlgorithms().isPrime(2));
-        assertEquals( true, new MathAlgorithms().isPrime(3));
-        assertEquals( true, new MathAlgorithms().isPrime(5));
-        assertEquals( true, new MathAlgorithms().isPrime(7));
+
+        assertTrue(new MathAlgorithms().isPrime(2));
+        assertTrue(new MathAlgorithms().isPrime(3));
+        assertTrue(new MathAlgorithms().isPrime(5));
 
     }
 
@@ -29,9 +29,11 @@ public class MathAlgorithmsTest {
 
     public void testIsPrimeNotPrime() {
 
-        assertEquals( false, new MathAlgorithms().isPrime(4));
-        assertEquals( false, new MathAlgorithms().isPrime(6));
-        assertEquals( false, new MathAlgorithms().isPrime(24));
+        assertFalse(new MathAlgorithms().isPrime(4));
+        assertFalse(new MathAlgorithms().isPrime(6));
+        assertFalse(new MathAlgorithms().isPrime(12));
+        assertFalse(new MathAlgorithms().isPrime(1));
+
 
     }
 
