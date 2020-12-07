@@ -11,9 +11,8 @@ public class MathAlgorithmsTest {
     public void testIsPrimeNegative() throws IllegalArgumentException {
 
         Exception ex = assertThrows(IllegalArgumentException.class, () -> new MathAlgorithms().isPrime(-33));
-        assertEquals("Number has to be positive, higher, than 1", ex.getMessage());
-        Exception ex2 = assertThrows(IllegalArgumentException.class, () -> new MathAlgorithms().isPrime(1));
-        assertEquals("Number has to be positive, higher, than 1", ex.getMessage());
+        assertEquals("Number has to be positive!", ex.getMessage());
+
     }
     @Test
 
@@ -33,6 +32,7 @@ public class MathAlgorithmsTest {
         assertEquals( false, new MathAlgorithms().isPrime(4));
         assertEquals( false, new MathAlgorithms().isPrime(6));
         assertEquals( false, new MathAlgorithms().isPrime(24));
+
     }
 
 
