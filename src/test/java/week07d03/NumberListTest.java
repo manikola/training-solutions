@@ -12,17 +12,12 @@ public class NumberListTest {
     @Test
 
     public void testIsIncreasingFalse() {
-        NumberList numberList = new NumberList();
-        List<Integer> numbers = Arrays.asList(1,2,3,99,56,77);
+        NumberList nl = new NumberList();
 
-        assertFalse(new NumberList().isIncreasing(numbers));
+        assertFalse(nl.isIncreasing(Arrays.asList(1,2,3,99,56,77)));
+        assertTrue(nl.isIncreasing(Arrays.asList(1,2,3,3,34,56,77)));
+        assertTrue(nl.isIncreasing(Arrays.asList(1,2,3,3,4,4, 5,66)));
     }
 
-    @Test
-    public void testIsIncreasingTrue() {
-        NumberList numberList = new NumberList();
-        List<Integer> numbers = Arrays.asList(1,2,3,3,34,56,77);
 
-        assertFalse(new NumberList().isIncreasing(numbers));
-    }
 }
