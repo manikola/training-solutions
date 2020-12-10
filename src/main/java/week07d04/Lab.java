@@ -10,11 +10,10 @@ public class Lab {
 
     public Lab(String title) {
         this.title = title;
-        this.completed = false;
     }
 
     public Lab(String title, LocalDate completedAt) {
-        this(title);
+        this.title = title;
         this.completedAt = completedAt;
         this.completed = true;
     }
@@ -48,6 +47,22 @@ public class Lab {
                 ", completed=" + completed +
                ", completedAt: " + completedAt;
    }
+
+    public static void main(String[] args) {
+
+        Lab lab = new Lab("Methods");
+        Lab lab1 = new Lab("Inheritance");
+        Lab lab2 = new Lab("Abstract");
+
+
+
+        lab.complete(LocalDate.of(2020, 10,12));
+        System.out.println(lab.toString());
+        lab1.complete();
+        System.out.println(lab1.toString());
+        lab2.complete();
+        System.out.println(lab2.toString());
+    }
 
 
 
