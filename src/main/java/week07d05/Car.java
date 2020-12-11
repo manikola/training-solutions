@@ -2,17 +2,10 @@ package week07d05;
 
 public class Car extends Vehicle{
 
-    public Car(int numberOfGears, TransmissionType transmissionType) {
-        super(5, TransmissionType.AUTOMATIC);
+    private int numberOfGears;
+    private TransmissionType transmissionType;
+    public Car(int numberOfGears) {
+        super(numberOfGears, TransmissionType.AUTOMATIC);
     }
 
-    @Override
-    public int getNumberOfGears() {
-        return numberOfGears();
-    }
-
-    @Override
-    public TransmissionType getTransmissionType() {
-        return TransmissionType();
-    }
 }

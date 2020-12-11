@@ -12,7 +12,7 @@ public class Vehicle {
 
     public Vehicle(int numberOfGears, TransmissionType transmissionType) {
         this.numberOfGears = numberOfGears;
-        this.transmissionType = TransmissionType.MANUAL;
+        this.transmissionType = transmissionType;
     }
 
     public int getNumberOfGears() {
