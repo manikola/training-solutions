@@ -1,7 +1,6 @@
-package week02;
+package week02project;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Office {
