@@ -6,7 +6,10 @@ public class MotorCycle extends Vehicle{
     private int numberOfGears;
     private TransmissionType transmissionType;
 
-    public Motorcycle() {
-        super(5, TransmissionType.SEQUENTIAL);
+    public MotorCycle(int numberOfGears, TransmissionType transmissionType) {
+        this.numberOfGears = 5;
+        this.transmissionType = TransmissionType.SEQUENTIAL;
     }
+
 }
+
