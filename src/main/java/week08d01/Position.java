@@ -14,19 +14,19 @@ public class Position {
         this.y = y;
     }
 
-    public void increaseX() {
+    public void moveJ() {
         ++x;
     }
 
-    public void decreaseX() {
+    public void moveB() {
         --x;
     }
 
-    public void increaseY() {
+    public void moveF() {
         ++y;
     }
 
-    public void decreaseY() {
+    public void moveL() {
         --y;
     }
 
