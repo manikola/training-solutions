@@ -16,7 +16,7 @@ public class StringListsTest {
         List<String> first = Arrays.asList("alma","narancs","banán", "citrom", "mandarin");
         List<String> second = Arrays.asList("alma","körte","szilva", "citrom", "narancs");
 
-        assertEquals("[alma, narancs, banán, citrom, mandarin, körte, szilva]", StringLists.stringListsUnion(first,second));
+        assertEquals(Arrays.asList("alma","narancs", "banán", "citrom", "mandarin", "körte", "szilva"), StringLists.stringListsUnion(first,second));
 
 
 
