@@ -47,9 +47,9 @@ public class Catalog {
         }
 
         List<Integer> numberOfPagesList = new ArrayList<>();
-        for (CatalogItem c : getPrintedLibraryItems()) {
-            if (c.numberOfPagesAtOneItem() > numberOfPages) {
-                numberOfPagesList.add(c.numberOfPagesAtOneItem());
+        for (CatalogItem item : getPrintedLibraryItems()) {
+            if (item.numberOfPagesAtOneItem() > numberOfPages) {
+                numberOfPagesList.add(item.numberOfPagesAtOneItem());
             }
         }
 
