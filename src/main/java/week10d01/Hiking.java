@@ -9,7 +9,7 @@ public class Hiking {
 
 
     public static double getPlusElevation(List<Double> height) {
-        double sum = 0.0;
+        double sum = 0;
         for (int i = 1; i < height.size(); i++) {
             if (height.get(i) > height.get(i-1)) {
                 sum += (height.get(i) - height.get(i-1));
