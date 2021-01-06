@@ -24,13 +24,13 @@ public class Cv {
     public List<Skill> getSkills() {
         return skills;
     }
-    public void addSkills(List<Skill> skills) {
+    public void addSkills(String nameAndLevel) {
 
-        for (Skill item : skills) {
-             skills.add(new Skill(item.getName(),item.getLevel()));
+            name = nameAndLevel.substring(0, nameAndLevel.indexOf(" "));
+        int level = Integer.parseInt(nameAndLevel.substring(nameAndLevel.length()-1,nameAndLevel.length()));
+            skills.add(new Skill(name, level));
         }
 
-    }
 
     public int findSkill(String name) {
         for (Skill item : skills) {
