@@ -24,6 +24,7 @@ public class Cv {
     public List<Skill> getSkills() {
         return skills;
     }
+
     public void addSkills(String... nameAndLevel) {
         for (String s : nameAndLevel) {
             String name = s.substring(0, s.indexOf(" ("));
@@ -33,13 +34,14 @@ public class Cv {
     }
 
 
-        public int findSkillLevelByName(String name) {
-        for (Skill item :skills) {
+    public int findSkillLevelByName(String name) {
+        for (Skill item : skills) {
             if (name.equals(item.getName())) {
                 return item.getLevel();
             }
         }
         return 0;
+
+
     }
 }
-
