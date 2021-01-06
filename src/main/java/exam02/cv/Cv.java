@@ -24,16 +24,17 @@ public class Cv {
     public List<Skill> getSkills() {
         return skills;
     }
-    public void addSkills(String nameAndLevel) {
-
-            name = nameAndLevel.substring(0, nameAndLevel.indexOf(" "));
-        int level = Integer.parseInt(nameAndLevel.substring(nameAndLevel.length()-1,nameAndLevel.length()));
+    public void addSkills(String... nameAndLevel) {
+        for (String s : nameAndLevel) {
+            String name = s.substring(0, s.indexOf(" ("));
+            int level = Integer.parseInt(s.substring(s.lastIndexOf("(") + 1, s.indexOf(")")));
             skills.add(new Skill(name, level));
         }
+    }
 
 
-    public int findSkill(String name) {
-        for (Skill item : skills) {
+        public int findSkillLevelByName(String name) {
+        for (Skill item :skills) {
             if (name.equals(item.getName())) {
                 return item.getLevel();
             }
@@ -41,3 +42,4 @@ public class Cv {
         return 0;
     }
 }
+
