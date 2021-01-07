@@ -6,7 +6,7 @@ import java.util.List;
 public class Cv {
 
     private String name;
-    private List<Skill> skills;
+    private List<Skill> skills = new ArrayList<>();
 
     public Cv(String name) {
         this.name = name;
@@ -27,7 +27,7 @@ public class Cv {
 
     public void addSkills(String... nameAndLevel) {
         for (String s : nameAndLevel) {
-            String name = s.substring(0, s.indexOf(" ("));
+            String name = s.substring(0, s.length()-4);
             int level = Integer.parseInt(s.substring(s.lastIndexOf("(") + 1, s.indexOf(")")));
             skills.add(new Skill(name, level));
         }
@@ -40,7 +40,7 @@ public class Cv {
                 return item.getLevel();
             }
         }
-        return 0;
+        throw new SkillnotFoundException("Not found");
 
 
     }
