@@ -36,50 +36,20 @@ public class Activities {
         }
         return count;
     }
-    public double getBikingDistance() {
-        double bikingDistance = 0;
-        for (Activity item : activities) {
-            if (item.getType() == ActivityType.BIKING) {
-                bikingDistance += item.getDistance();
-            }
-        }
-        return bikingDistance;
-    }
-    public double getHikingDistance() {
-        double hikingDistance = 0;
-        for (Activity item : activities) {
-            if (item.getType() == ActivityType.HIKING) {
-                hikingDistance += item.getDistance();
-            }
-        }
-        return hikingDistance;
-    }
-    public double getRunningDistance() {
-        double runningDistance = 0;
-        for (Activity item : activities) {
-            if (item.getType() == ActivityType.RUNNING) {
-                runningDistance += item.getDistance();
-            }
-        }
-        return runningDistance;
-    }
-    public double getBasketballDistance() {
-        double basketballDistance = 0;
-        for (Activity item : activities) {
-            if (item.getType() == ActivityType.BASKETBALL) {
-                basketballDistance += item.getDistance();
-            }
-        }
-        return basketballDistance;
-    }
+
 
     public List<Report> distancesByTypes() {
         List<Report> reports = new ArrayList<>();
-        for (Activity item : activities) {
-            reports.add(new Report(ActivityType.BIKING, getBikingDistance()));
-            reports.add(new Report(ActivityType.HIKING, getHikingDistance()));
-            reports.add(new Report(ActivityType.RUNNING, getRunningDistance()));
-            reports.add(new Report(ActivityType.BASKETBALL, getBasketballDistance()));
+        ActivityType activityType;
+        for (int i = 0; i < ActivityType.values().length; i++) {
+            activityType = ActivityType.values()[i];
+            double distance = 0;
+            for(Activity activity : activities) {
+                if(activity.getType().equals(ActivityType.values()[i])) {
+                    distance += activity.getDistance();
+                }
+            }
+            reports.add(new Report(activityType,distance));
         }
         return reports;
     }
