@@ -1,5 +1,9 @@
 package activity;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -86,10 +90,36 @@ public class Track {
         double x = findMaximumCoordinate().getLatitude() - findMinimumCoordinate().getLatitude();
         double y = findMaximumCoordinate().getLongitude() - findMinimumCoordinate().getLongitude();
 
-            return x * y;
+        return x * y;
 
-        }
     }
+
+    public void loadFromGpx(InputStream is) {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(is))) {
+            String line;
+            String newLine;
+            double lat = 0.0;
+            double lon = 0.0;
+            double ele = 0.0;
+
+            while ((line = reader.readLine()) != null) {
+                if (line.contains("<trkpt")) {
+                    lat = Double.parseDouble(line.substring(15, 25));
+                    lon = Double.parseDouble(line.substring(32, 42));
+
+                    newLine = reader.readLine();
+
+                    ele = Double.parseDouble(newLine.substring(9, 14));
+                    trackPoints.add(new TrackPoint(new Coordinate(lat, lon), ele));
+                }
+            }
+        } catch (IOException ioe) {
+            throw new IllegalArgumentException("Can not read file", ioe);
+        }
+
+
+    }
+}
 
 
 
