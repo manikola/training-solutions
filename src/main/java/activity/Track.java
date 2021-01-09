@@ -75,10 +75,10 @@ public class Track {
         Coordinate maxCoordinate = new Coordinate(maxLatitude, maxLongitude);
 
         for (TrackPoint item : trackPoints) {
-            if (maxCoordinate.getLatitude() == 0 || (maxCoordinate.getLatitude() < item.getCoordinate().getLatitude())) {
+            if ((maxCoordinate.getLatitude() < item.getCoordinate().getLatitude())) {
                 maxLatitude = item.getCoordinate().getLatitude();
             }
-            if (maxCoordinate.getLongitude() == 0 || (item.getCoordinate().getLongitude() > maxCoordinate.getLongitude())) {
+            if ((item.getCoordinate().getLongitude() > maxCoordinate.getLongitude())) {
                 maxLongitude = item.getCoordinate().getLongitude();
 
             }
