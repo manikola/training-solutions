@@ -5,16 +5,16 @@ import java.util.List;
 
 public class WordFilter {
 
-    public static List<String> wordsWithChar(List<String> words, char c) {
+    public List<String> wordsWithChar(List<String> words, char c) {
         List<String> filteredList = new ArrayList<>();
         String s = String.valueOf(c);
-        for(String item : words) {
-            if(item.contains(s)) {
+        for(String item: words) {
+            if (item.contains(s)) {
+                // vagy: if (item.indexOf(c) >= 0) {
                 filteredList.add(item);
             }
         }
         return filteredList;
-
     }
 
 //    public static void main(String[] args) {

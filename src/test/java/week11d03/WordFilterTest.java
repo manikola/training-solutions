@@ -24,8 +24,8 @@ public class WordFilterTest {
 
 
       assertEquals(Arrays.asList("alma", "ananász", "banán", "narancs"),wordFilter.wordsWithChar(list1, 'a'));
-      assertEquals(Arrays.asList("banán"),WordFilter.wordsWithChar(list1, 'b'));
-      assertEquals(Arrays.asList("dió", "mogyoró"),WordFilter.wordsWithChar(list1, 'ó'));
+      assertEquals(Arrays.asList("banán"),wordFilter.wordsWithChar(list1, 'b'));
+      assertEquals(Arrays.asList("dió", "mogyoró"),wordFilter.wordsWithChar(list1, 'ó'));
 
 
     }
