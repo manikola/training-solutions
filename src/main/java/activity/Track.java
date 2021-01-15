@@ -37,7 +37,7 @@ public class Track {
                 sum = sum + (trackPoints.get(i - 1).getElevation() - trackPoints.get(i).getElevation());
             }
         }
-        return (double) sum;
+        return sum;
     }
 
     public double getDistance() {
@@ -52,33 +52,32 @@ public class Track {
     }
 
     public Coordinate findMinimumCoordinate() {
-        double minLatitude = Double.MIN_VALUE;
-        double minLongitude = Double.MIN_VALUE;
-        Coordinate minCoordinate = new Coordinate(minLatitude, minLongitude);
+        double minLatitude = trackPoints.get(0).getCoordinate().getLatitude();
+        double minLongitude = trackPoints.get(0).getCoordinate().getLongitude();
+
 
         for (TrackPoint item : trackPoints) {
-            if (minCoordinate.getLatitude() == 0 || (item.getCoordinate().getLatitude() < minCoordinate.getLatitude())) {
+            if (item.getCoordinate().getLatitude() <minLatitude) {
                 minLatitude = item.getCoordinate().getLatitude();
             }
-            if (minCoordinate.getLongitude() == 0 || (item.getCoordinate().getLongitude() < minCoordinate.getLongitude())) {
+            if (item.getCoordinate().getLongitude() < minLongitude) {
                 minLongitude = item.getCoordinate().getLongitude();
 
             }
         }
         return new Coordinate(minLatitude, minLongitude);
-
     }
 
     public Coordinate findMaximumCoordinate() {
         double maxLatitude = trackPoints.get(0).getCoordinate().getLatitude();
         double maxLongitude = trackPoints.get(0).getCoordinate().getLongitude();
-        Coordinate maxCoordinate = new Coordinate(maxLatitude, maxLongitude);
+
 
         for (TrackPoint item : trackPoints) {
-            if ((maxCoordinate.getLatitude() < item.getCoordinate().getLatitude())) {
+            if ((maxLatitude< item.getCoordinate().getLatitude())) {
                 maxLatitude = item.getCoordinate().getLatitude();
             }
-            if ((item.getCoordinate().getLongitude() > maxCoordinate.getLongitude())) {
+            if (item.getCoordinate().getLongitude() > maxLongitude) {
                 maxLongitude = item.getCoordinate().getLongitude();
 
             }
