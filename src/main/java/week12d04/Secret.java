@@ -14,7 +14,6 @@ public class Secret {
         Path path = Path.of("src/main/resources/secret.dat");
         try {
             byte[] bytes = Files.readAllBytes(path);
-           System.out.println(bytes.length);
             for (int i = 0; i < bytes.length; i++){
             bytes[i] = (byte) (bytes[i] + 10);
                 System.out.print((char) bytes[i]);
