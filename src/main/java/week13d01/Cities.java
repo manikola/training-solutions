@@ -7,19 +7,18 @@ import java.nio.file.Path;
 
 public class Cities {
 
-    public String longestCity() {
-        String longestCityName = null;
+    public String longestCity(BufferedReader reader) {
+        String longestCityName = "";
         int max = 0;
-        Path path = Path.of("src/main/resources/iranyitoszamok-varosok-2021.csv");
-        try (BufferedReader br = Files.newBufferedReader(path)) {
+                try  {
             String line;
-            while ((line = br.readLine()) != null) {
-                String[] cities = line.split(";");
+            reader.readLine(); //skipping header
+            while ((line = reader.readLine()) != null) {
+                String[] arr = line.split(";");
+                String city = arr[1];
+                if (city.length() > longestCityName.length()) {
 
-                String longestCity = null;
-                if (cities[1].length() > max) {
-                    max = cities[1].length();
-                    longestCityName = (cities[1]);
+                    longestCityName = city;
                 }
 
             }
@@ -31,10 +30,14 @@ public class Cities {
 
 
 
-
-
     public static void main(String[] args) {
-        Cities c = new Cities();
-        System.out.println(c.longestCity());
+        try (BufferedReader bufferedReader = Files.newBufferedReader(Path.of("src/main/resources/iranyitoszamok-varosok-2021.csv"))){
+            String city = new Cities().longestCity(bufferedReader);
+            System.out.println(city);
+
+        }
+        catch (IOException ioe) {
+            throw new IllegalStateException("Can not read file", ioe);
+        }
     }
 }
