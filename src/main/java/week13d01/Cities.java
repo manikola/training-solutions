@@ -7,10 +7,10 @@ import java.nio.file.Path;
 
 public class Cities {
 
-    public String longestCity(Path path) {
+    public String longestCity() {
         String longestCityName = null;
         int max = 0;
-        path = Path.of("src/main/resources/iranyitoszamok-varosok-2021.csv");
+        Path path = Path.of("src/main/resources/iranyitoszamok-varosok-2021.csv");
         try (BufferedReader br = Files.newBufferedReader(path)) {
             String line;
             while ((line = br.readLine()) != null) {
