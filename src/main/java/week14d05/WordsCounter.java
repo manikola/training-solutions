@@ -40,6 +40,7 @@ public class WordsCounter {
         } catch (IOException e) {
             throw new IllegalStateException("Can not read file",e);
         }
+
     }
 
     public static void main(String[] args) {
