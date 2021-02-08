@@ -17,7 +17,10 @@ public class CoordinateSystemTest {
         coordinates.put(26,48);
         coordinates.put(58,24);
 
-        assertEquals("26=48", cs.searchMax(coordinates).toString());
+        Map.Entry<Integer,Integer> result = cs.searchMax(coordinates);
+
+        assertEquals(26, result.getKey());
+        assertEquals(48, result.getValue());
 
     }
 }
