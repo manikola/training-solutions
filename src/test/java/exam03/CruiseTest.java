@@ -3,6 +3,7 @@ package exam03;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -89,4 +90,6 @@ public class CruiseTest {
         Map<CruiseClass, Integer> result = cruise.countPassengerByClass();
         assertEquals(Map.of(CruiseClass.LUXURY, 2 , CruiseClass.FIRST, 1), result);
     }
+
+
 }

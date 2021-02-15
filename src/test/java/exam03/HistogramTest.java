@@ -17,8 +17,8 @@ public class HistogramTest {
 //            System.out.println(result);
             assertEquals("***\n" +
                     "****\n" +
-                    "**\n" +
-                    "*\n", result);
+                    "*\n" +
+                    "**\n", result);
         }
     }
 }
