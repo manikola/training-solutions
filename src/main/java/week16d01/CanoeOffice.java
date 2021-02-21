@@ -95,9 +95,6 @@ public class CanoeOffice {
 
         System.out.println(co.countRentals());
 
-
-
-
     }
 
 }
