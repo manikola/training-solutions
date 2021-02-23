@@ -1,4 +1,4 @@
-package exam03.retake01;
+package exam03retake01;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -14,13 +14,8 @@ public class OwlCounter {
 
     private Map<String, Integer> birds = new HashMap<>();
 
-    public Map<String, Integer> getBirds() {
-        return new HashMap<>(birds);
-    }
 
     public  void readFromFile(BufferedReader br){
-
-
         try  {
             String line;
             while((line = br.readLine()) != null){
@@ -31,34 +26,13 @@ public class OwlCounter {
 
             }
 
-
-
         } catch (IOException e) {
             throw new IllegalStateException("Can not read file",e);
         }
     }
 
     public int getNumberOfOwls(String county){
-      int numberOfOwls = 0;
-               for(Map.Entry<String, Integer> entry : getBirds().entrySet()){
-            if(entry.getKey().equals(county)){
-                numberOfOwls = entry.getValue();
-            }
-
-
-        }return numberOfOwls;
+        return birds.get(county);
     }
 
-
-    public static void main(String[] args) {
-        try(BufferedReader br = new BufferedReader(new InputStreamReader(OwlCounter.class.getResourceAsStream("/owls.txt")))){
-            OwlCounter oc = new OwlCounter();
-           oc.readFromFile(br);
-
-            System.out.println(oc.getNumberOfOwls("Somogy"));
-
-        }catch (IOException e) {
-            throw new IllegalStateException("Can not find file",e);
-        }
-    }
 }

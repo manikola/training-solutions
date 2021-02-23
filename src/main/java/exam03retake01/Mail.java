@@ -1,4 +1,6 @@
-package exam03.retake01;
+package exam03retake01;
+
+import exam03retake01.Contact;
 
 import java.util.List;
 

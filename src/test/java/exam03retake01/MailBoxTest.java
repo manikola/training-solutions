@@ -1,5 +1,8 @@
-package exam03.retake01;
+package exam03retake01;
 
+import exam03retake01.Contact;
+import exam03retake01.Mail;
+import exam03retake01.MailBox;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

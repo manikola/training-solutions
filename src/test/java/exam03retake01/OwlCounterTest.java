@@ -1,4 +1,4 @@
-package exam03.retake01;
+package exam03retake01;
 
 import org.junit.jupiter.api.Test;
 
