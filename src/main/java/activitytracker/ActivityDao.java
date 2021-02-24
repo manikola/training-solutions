@@ -17,7 +17,7 @@ public class ActivityDao {
         this.dataSource = dataSource;
     }
 
-    public long insertActivity(Activity activity) {
+    public Activity insertActivity(Activity activity) {
         try (
                 Connection conn = dataSource.getConnection();
                 PreparedStatement stmt = conn.prepareStatement("INSERT INTO activities(start_time, activity_desc, activity_type) VALUES(?,?,?);",Statement.RETURN_GENERATED_KEYS)) {
@@ -25,7 +25,8 @@ public class ActivityDao {
             stmt.setString(2, activity.getDesc());
             stmt.setString(3, activity.getType().toString());
             stmt.executeUpdate();
-            return executeAndGetGeneratedKey(stmt);
+            long id = executeAndGetGeneratedKey(stmt);
+            return new Activity(id, activity.getStartTime(), activity.getDesc(), activity.getType());
 
         } catch (SQLException se) {
             throw new IllegalArgumentException("Can not insert", se);
@@ -49,7 +50,7 @@ public class ActivityDao {
     private long executeAndGetGeneratedKey(PreparedStatement stmt){
         try (ResultSet rs = stmt.getGeneratedKeys()) {
             if(rs.next()){
-                return rs.getLong("id");
+                return rs.getLong(1);
             }
             else{
                 throw new SQLException("No key has generated");
