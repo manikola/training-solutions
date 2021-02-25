@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import org.mariadb.jdbc.MariaDbDataSource;
 
 import java.sql.SQLException;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -38,7 +37,7 @@ class ActivityDaoTest {
 
     @Test
     public void selectByIdTest(){
-        Activity activity = activityDao.findById(1L);
+        Activity activity = activityDao.findActivityById(1L);
         assertEquals(ActivityType.HIKING, activity.getType());
 
     }

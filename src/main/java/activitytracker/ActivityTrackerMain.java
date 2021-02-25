@@ -3,11 +3,8 @@ package activitytracker;
 import org.flywaydb.core.Flyway;
 import org.mariadb.jdbc.MariaDbDataSource;
 
-import javax.sql.DataSource;
 import java.sql.*;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 public class ActivityTrackerMain {
 
@@ -30,8 +27,8 @@ public class ActivityTrackerMain {
         flyway.migrate();
 
         ActivityDao activityDao = new ActivityDao(dataSource);
-        activityDao.insertActivity(new Activity(LocalDateTime.of(2021, 1, 1, 12, 30),"Basketball on yard",ActivityType.BASKETBALL));
-        activityDao.insertActivity(new Activity(LocalDateTime.of(2021, 1, 1, 12, 30),"Biking",ActivityType.BIKING));
+        activityDao.saveActivity(new Activity(LocalDateTime.of(2021, 1, 1, 12, 30),"Basketball on yard",ActivityType.BASKETBALL));
+        activityDao.saveActivity(new Activity(LocalDateTime.of(2021, 1, 1, 12, 30),"Biking",ActivityType.BIKING));
         System.out.println(activityDao.selectAllActivities());
         System.out.println(activityDao.selectByType(ActivityType.BASKETBALL));
         System.out.println(activityDao.activitiesBeforeDate(LocalDateTime.of(2021, 02, 15, 12, 00)));
