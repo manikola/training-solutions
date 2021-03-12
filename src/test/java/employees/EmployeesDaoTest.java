@@ -28,7 +28,7 @@ class EmployeesDaoTest {
             throw new IllegalStateException("Cano not connect to database",se);
         }
 
-        Flyway flyway = Flyway.configure().dataSource(dataSource).load();
+        Flyway flyway = Flyway.configure().locations("/db/migration/employees").dataSource(dataSource).load();
        flyway.clean();
         flyway.migrate();
 
