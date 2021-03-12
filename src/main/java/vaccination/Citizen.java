@@ -50,4 +50,4 @@ public class Citizen {
 //E-mail cím
 //TAJ száma
 
-}
+
