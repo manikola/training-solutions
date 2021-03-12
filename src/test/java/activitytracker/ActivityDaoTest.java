@@ -28,7 +28,9 @@ class ActivityDaoTest {
             throw new IllegalStateException("Can not connect to database", se);
         }
 
-        Flyway flyway = Flyway.configure().dataSource(dataSource).load();
+        Flyway flyway = Flyway.configure().locations("/db/migration/activity_tracker").dataSource(dataSource).load();
+        flyway.clean();
+        flyway.migrate();
         flyway.clean();
         flyway.migrate();
 
